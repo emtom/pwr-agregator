@@ -1,0 +1,76 @@
+/**
+ *
+ *	Main stream styling
+ *
+**/
+.stream {
+	.post-container{
+		@include box-sizing(border-box);
+		width: 25%;
+		padding: 0 1.5%;
+		margin: 0 0 20px;
+		@include respond-to(1199) {
+			width: 33%;
+		}
+		@include respond-to(991) {
+			width: 50%;
+			padding: 0 2%;
+		}
+	}
+	.post {
+		background: $bgContentColor;
+		overflow: hidden;
+		@include content-border;
+
+		.content {
+			padding: 15px;
+			p {
+				font-size: 16px;
+				line-height: 24px;
+				font-weight: normal;
+				color: #777;
+			}
+			&.small {
+				h3 {
+					font-size: 14px;
+					line-height: 24px;
+					font-weight: normal;
+				}
+				p {
+					font-size: 12px;
+					line-height: 20px;
+				}
+			}
+		}
+		.img-container {
+			width: 100%;
+			overflow: hidden;
+			img {
+				min-width: 100%;
+				height: auto;
+			}
+			&.full {
+				height: auto;
+			}
+		}
+
+		.footer {
+			@include cf;
+			background: #F9F9F9;
+			padding: 15px;
+			font-size: 14px;
+			line-height: 16px;
+			font-weight: 600;
+			color: #999;
+		}
+		.footer__right {
+			float: right;
+			text-align: right;
+		}
+		.footer__left {
+			float: left;
+			text-align: left;
+		}
+	}
+
+}
