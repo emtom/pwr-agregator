@@ -22,11 +22,11 @@ class HomeController extends BaseController {
 		} else {
 
 			$user = Auth::user();
+			//$instaUser = Instagram::getCurrentUser();
 			$instaUser = Instagram::getCurrentUser();
 
 			return View::make('home')
-				->with('user', $user)
-				->with('instaUser', $instaUser);
+				->with('user', $user);
 		}
 	}
 

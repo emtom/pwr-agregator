@@ -419,6 +419,7 @@ return array(
     'Illuminate\\Workbench\\PackageCreator' => $vendorDir . '/laravel/framework/src/Illuminate/Workbench/PackageCreator.php',
     'Illuminate\\Workbench\\Starter' => $vendorDir . '/laravel/framework/src/Illuminate/Workbench/Starter.php',
     'Illuminate\\Workbench\\WorkbenchServiceProvider' => $vendorDir . '/laravel/framework/src/Illuminate/Workbench/WorkbenchServiceProvider.php',
+    'InstagramController' => $baseDir . '/app/controllers/InstagramController.php',
     'Instagram\\Auth' => $vendorDir . '/php-instagram-api/php-instagram-api/Instagram/Auth.php',
     'Instagram\\Collection\\CollectionAbstract' => $vendorDir . '/php-instagram-api/php-instagram-api/Instagram/Collection/CollectionAbstract.php',
     'Instagram\\Collection\\CommentCollection' => $vendorDir . '/php-instagram-api/php-instagram-api/Instagram/Collection/CommentCollection.php',

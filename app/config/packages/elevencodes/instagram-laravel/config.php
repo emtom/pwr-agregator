@@ -9,7 +9,7 @@ return array(
 	| Your Instagram client_id.
 	|
 	*/
-	'client_id' 	=> 	'',
+	'client_id' 	=> 	'aa461340ca1e4b53974a0841db951407',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -19,7 +19,7 @@ return array(
 	| Your Instagram client_secret.
 	|
 	*/
-	'client_secret'	=>	'',
+	'client_secret'	=>	'8c43a6ecc0c446afb6015abac04ebee7',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -30,7 +30,7 @@ return array(
 	| Note: this has to be the same value as in the authorization request.
 	|
 	*/
-	'redirect_uri'	=>	'',
+	'redirect_uri'	=>	'http://localhost/agregator/public/',
 
 	/*
 	|--------------------------------------------------------------------------
