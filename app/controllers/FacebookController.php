@@ -53,7 +53,7 @@ class FacebookController extends \BaseController {
 
 	public function getInitialStream() {
 
-		$stream = $this->facebook->api('/me?fields=home.limit(20)');
+		$stream = $this->facebook->api('/me?fields=home');
 
 		return $stream;
 	}

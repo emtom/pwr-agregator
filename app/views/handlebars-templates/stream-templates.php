@@ -12,14 +12,16 @@
 			{{/if}}
 
 			{{#if picture}}
-			<div class="img-container">
-				<a href="{{ link }}" target="_blank"><img src='{{picture}}' alt=""></a>
-			</div>
+				<div class="img-container">
+					<a href="{{ link }}" target="_blank"><img src='{{picture}}' alt=""></a>
+				</div>
 			{{/if}}
-			<div class="content small">
-				{{#if name }} <h3>{{ name }}</h3> {{/if}}
-				{{#if description }} <p>{{ description }}</p> {{/if}}
-			</div>
+			{{#if description}}
+				<div class="content small">
+					{{#if name }} <h3>{{ name }}</h3> {{/if}}
+					{{#if description }} <p>{{ description }}</p> {{/if}}
+				</div>
+			{{/if}}
 			<div class="footer">
 
 				<div class="footer__left"></div>
