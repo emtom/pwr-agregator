@@ -8,7 +8,7 @@
 
 @section ('aside-nav')
 
-	<a href="#" class="btn-aside btn-show-aside">menu</a>
+	<a href="#" class="btn-aside btn-show-aside"><i class="fa fa-bars"></i></a>
 
 @stop
 

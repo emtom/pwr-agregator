@@ -21,6 +21,7 @@
         <![endif]-->
 
     	{{ HTML::style('assets/css/reset.css') }}
+        {{ HTML::style('assets/css/font-awesome.min.css') }}
         {{ HTML::style('assets/css/style.css') }}
 
 
@@ -31,7 +32,7 @@
         <aside>
 
             <section class="aside__bar--right">
-                <a href="{{ url('home') }}" class="btn-home">home</a>
+                <a href="{{ url('home') }}" class="btn-home"><i class="fa fa-home"></i></a>
                 @yield('aside-nav')
             </section>
             <section class="aside__bar--left">
