@@ -13,7 +13,7 @@
 
 			{{#if picture}}
 				<div class="img-container">
-					<a href="{{ link }}" target="_blank"><img src='{{picture}}' alt=""></a>
+					<a href="{{ link }}" target="_blank"><img src='https://graph.facebook.com/{{id}}/picture' alt=""></a>
 				</div>
 			{{/if}}
 			{{#if description}}

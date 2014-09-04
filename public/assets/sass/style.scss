@@ -280,18 +280,18 @@ main {
 }
 
 .loader-gif {
-	width: 200px;
-	height: 200px;
+	width: 300px;
+	height: 400px;
 	margin: 0 auto;
 	position: relative;
 	top: 50%;
 	@include translateY(-50%);
 	@include opacity(.6);
 	@include scale(.5);
-	-webkit-animation: circular 2s infinite linear;
-	-moz-animation: circular 2s infinite linear;
-	animation: circular 2s infinite linear;
-	background: url('../img/loader.png');
+	// -webkit-animation: circular 2s infinite linear;
+	// -moz-animation: circular 2s infinite linear;
+	// animation: circular 2s infinite linear;
+	background: url('../img/loader.gif');
 }
 
 

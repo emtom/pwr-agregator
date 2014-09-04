@@ -44,7 +44,8 @@
 		}
 		.img-container {
 			width: 100%;
-			overflow: hidden;
+			overflow: auto;
+			max-height: 600px;
 			img {
 				min-width: 100%;
 				height: auto;

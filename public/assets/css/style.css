@@ -56,7 +56,8 @@
       line-height: 20px; }
   .stream .post .img-container {
     width: 100%;
-    overflow: hidden; }
+    overflow: auto;
+    max-height: 600px; }
     .stream .post .img-container img {
       min-width: 100%;
       height: auto; }
@@ -108,6 +109,19 @@ aside {
   width: 50px;
   height: 100%;
   border-left: 1px solid #ECEEEE; }
+  .aside__bar--right a {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 22px;
+    line-height: 20px;
+    color: #777;
+    -webkit-transition: color 0.5s ease;
+    -moz-transition: color 0.5s ease;
+    -o-transition: color 0.5s ease;
+    transition: color 0.5s ease; }
+    .aside__bar--right a:hover {
+      color: #999; }
 
 .aside__bar--left {
   float: left;
@@ -118,6 +132,21 @@ aside {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
+  .aside__bar--left a {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-style: 13px;
+    line-height: 16px;
+    text-transform: uppercase;
+    font-weight: 300;
+    -webkit-transition: color 0.5s ease;
+    -moz-transition: color 0.5s ease;
+    -o-transition: color 0.5s ease;
+    transition: color 0.5s ease; }
+    .aside__bar--left a:hover {
+      color: white; }
 
 .aside-profile .img-container {
   width: 100px;
@@ -2022,8 +2051,8 @@ main {
     color: #fafafa; }
 
 .loader-gif {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 400px;
   margin: 0 auto;
   position: relative;
   top: 50%;
@@ -2039,10 +2068,7 @@ main {
   -ms-transform: scale(0.5, 0.5);
   -o-transform: scale(0.5, 0.5);
   transform: scale(0.5, 0.5);
-  -webkit-animation: circular 2s infinite linear;
-  -moz-animation: circular 2s infinite linear;
-  animation: circular 2s infinite linear;
-  background: url("../img/loader.png"); }
+  background: url("../img/loader.gif"); }
 
 .pull-left {
   float: left; }

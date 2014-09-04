@@ -20,6 +20,19 @@ aside {
 	width: 50px;
 	height: 100%;
 	border-left: 1px solid #ECEEEE;
+
+	a {
+		display: block;
+		text-align: center;
+		padding: 10px 0;
+		font-size: 22px;
+		line-height: 20px;
+		color: #777;
+		@include transition(color 0.5s ease);
+		&:hover {
+			color: #999;
+		}
+	}
 }
 
 .aside__bar--left {
@@ -29,6 +42,21 @@ aside {
 	background: $bgaside1;
 	border-right: 1px solid #fff;
 	@include box-sizing(border-box);
+
+	a {
+		display: block;
+		text-align: center;
+		padding: 10px 0;
+		color: rgba(255, 255, 255, 0.8);
+		font-style: 13px;
+		line-height: 16px;
+		text-transform: uppercase;
+		font-weight: 300;
+		@include transition(color 0.5s ease);
+		&:hover {
+			color: rgba(255, 255, 255, 1);
+		}
+	}
 }
 
 .aside-profile {
