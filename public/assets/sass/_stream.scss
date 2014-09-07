@@ -25,7 +25,7 @@
 		.content {
 			padding: 15px;
 			p {
-				font-size: 16px;
+				font-size: 14px;
 				line-height: 24px;
 				font-weight: normal;
 				color: #777;
@@ -47,7 +47,7 @@
 			overflow: auto;
 			max-height: 600px;
 			img {
-				min-width: 100%;
+				width: 100%;
 				height: auto;
 			}
 			&.full {
@@ -67,11 +67,44 @@
 		.footer__right {
 			float: right;
 			text-align: right;
+
+			a {
+				color: inherit;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
 		}
 		.footer__left {
 			float: left;
 			text-align: left;
 		}
-	}
 
-}
+		.link-container {
+			padding: 15px;
+			display: block;
+			border-top: 1px solid #ECEEEE;
+			border-bottom: 1px solid #ECEEEE;
+			color: #111;
+			@include cf;
+
+			img {
+				float: left;
+				margin: 0 15px 0px 0;
+			}
+
+			h3 {
+				font-size: 14px;
+				line-height: 20px;
+				font-weight: normal;
+			}
+
+			p {
+				font-size: 11px;
+				line-height: 18px;
+			}
+		}
+
+	} // post
+
+} //stream

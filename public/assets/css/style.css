@@ -43,7 +43,7 @@
   .stream .post .content {
     padding: 15px; }
     .stream .post .content p {
-      font-size: 16px;
+      font-size: 14px;
       line-height: 24px;
       font-weight: normal;
       color: #777; }
@@ -59,7 +59,7 @@
     overflow: auto;
     max-height: 600px; }
     .stream .post .img-container img {
-      min-width: 100%;
+      width: 100%;
       height: auto; }
     .stream .post .img-container.full {
       height: auto; }
@@ -78,9 +78,29 @@
   .stream .post .footer__right {
     float: right;
     text-align: right; }
+    .stream .post .footer__right a {
+      color: inherit; }
+      .stream .post .footer__right a:hover {
+        text-decoration: underline; }
   .stream .post .footer__left {
     float: left;
     text-align: left; }
+  .stream .post .link-container {
+    padding: 15px;
+    display: block;
+    border-top: 1px solid #ECEEEE;
+    border-bottom: 1px solid #ECEEEE;
+    color: #111; }
+    .stream .post .link-container img {
+      float: left;
+      margin: 0 15px 0px 0; }
+    .stream .post .link-container h3 {
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: normal; }
+    .stream .post .link-container p {
+      font-size: 11px;
+      line-height: 18px; }
 
 /*
 	aside specific styles
@@ -113,7 +133,7 @@ aside {
     display: block;
     text-align: center;
     padding: 10px 0;
-    font-size: 22px;
+    font-size: 28px;
     line-height: 20px;
     color: #777;
     -webkit-transition: color 0.5s ease;

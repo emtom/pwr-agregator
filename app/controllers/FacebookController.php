@@ -15,7 +15,7 @@ class FacebookController extends \BaseController {
 	        'redirect_uri' => url('/login/fb/callback'),
 	        'scope' => 'email',
 	    );
-	    return Redirect::to($this->facebook->getLoginUrl($params));
+	    return Redirect::away($this->facebook->getLoginUrl($params));
 
 	}
 
@@ -54,6 +54,29 @@ class FacebookController extends \BaseController {
 	public function getInitialStream() {
 
 		$stream = $this->facebook->api('/me?fields=home');
+
+		//echo "<pre>";
+
+		foreach( $stream['home']['data'] as $key => &$post ) {
+
+			if( isset($post['object_id']) ) {
+				$new_photo = $this->facebook->api('/'.$post['object_id']);
+
+				//print_r($new_photo);
+				$post['picture'] = $new_photo['images'][1]['source'];
+			}
+			if( isset($post['from']) ) {
+
+				$fb_user = $this->facebook->api('/'.$post['from']['id']);
+				$post['from']['link_to'] = $fb_user['link'];
+
+			}
+			if( isset($post['to']) ) {
+				$fb_target_user = $this->facebook->api('/'.$post['to']['data'][0]['id']);
+				$post['to']['data'][0]['link_to'] = $fb_target_user['link'];
+			}
+
+		} // foreach
 
 		return $stream;
 	}
