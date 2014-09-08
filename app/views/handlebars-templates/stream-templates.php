@@ -40,6 +40,9 @@
 						{{#if description }} <p>{{ description }}</p> {{/if}}
 
 					{{/if}}
+					{{#if story}}
+						<p>{{ story }}</p>
+					{{/if}}
 				</a>
 
 			{{/compare}}

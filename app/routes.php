@@ -18,7 +18,7 @@ Route::get('/fbregister', 'FacebookController@register' );
 Route::get('/logout', 'UserController@logout' );
 Route::get('/profile', 'UserController@profile');
 
-Route::get('/fbstream', 'FacebookController@getInitialStream');
+Route::get('/fbstream', 'FacebookController@getStream');
 Route::get('/stream', 'StreamController@getStream');
 
 Route::get('login/fb/callback', 'FacebookController@loginCallback');

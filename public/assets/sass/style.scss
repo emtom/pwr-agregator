@@ -3,11 +3,6 @@
 @import 'compass/css3/transition';
 @import 'compass/css3/pie';
 
-
-.cf:before,
-.cf:after { content: " "; display: table; }
-.cf:after { clear: both; }
-
 /*
 	green : 40C783
 	green hover : 1EAC64

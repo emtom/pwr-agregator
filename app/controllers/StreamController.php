@@ -17,11 +17,15 @@ class StreamController extends BaseController {
 
 	public function getStream() {
 
-		$stream = App::make('FacebookController')->getInitialStream();
+		$getType = Input::get('getType');
+		$paging = Input::get('paging');
 
+		$stream = App::make('FacebookController')->getStream($getType, $paging);
+
+
+		//print_r($stream);
 
 		return $stream;
-
 	}
 
 }

@@ -1,17 +1,9 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,100,500);
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
-.cf:before,
-.cf:after {
-  content: " ";
-  display: table; }
-
-.cf:after {
-  clear: both; }
-
 /*
 	green : 40C783
 	green hover : 1EAC64
 */
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,100,500);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
 /**
  *
  *	Main stream styling
@@ -90,7 +82,13 @@
     display: block;
     border-top: 1px solid #ECEEEE;
     border-bottom: 1px solid #ECEEEE;
-    color: #111; }
+    color: #111;
+    display: block; }
+    .stream .post .link-container:before, .stream .post .link-container:after {
+      content: " ";
+      display: table; }
+    .stream .post .link-container:after {
+      clear: both; }
     .stream .post .link-container img {
       float: left;
       margin: 0 15px 0px 0; }

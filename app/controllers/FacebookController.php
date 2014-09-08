@@ -51,19 +51,65 @@ class FacebookController extends \BaseController {
 
 	}
 
-	public function getInitialStream() {
+	public function getStream($getType, $paging = null) {
+
+		switch($getType) {
+			case 'initial':
+				$stream = $this->getInitialStream();
+				break;
+			case 'scrolled':
+				$stream = $this->getScrolledStream($paging);
+				break;
+		} // switch
+
+		return $stream;
+	}
+	public function register() {
+
+		echo "register";
+
+	}
+
+	private function getInitialStream() {
 
 		$stream = $this->facebook->api('/me?fields=home');
-
-		//echo "<pre>";
 
 		foreach( $stream['home']['data'] as $key => &$post ) {
 
 			if( isset($post['object_id']) ) {
 				$new_photo = $this->facebook->api('/'.$post['object_id']);
+				if( isset($new_photo['images']) ) {
+					$post['picture'] = $new_photo['images'][1]['source'];
+				}
+			}
+			if( isset($post['from']) ) {
 
-				//print_r($new_photo);
-				$post['picture'] = $new_photo['images'][1]['source'];
+				$fb_user = $this->facebook->api('/'.$post['from']['id']);
+				$post['from']['link_to'] = $fb_user['link'];
+
+			}
+			if( isset($post['to']) ) {
+				$fb_target_user = $this->facebook->api('/'.$post['to']['data'][0]['id']);
+				$post['to']['data'][0]['link_to'] = $fb_target_user['link'];
+			}
+
+		} // foreach
+
+		return $stream['home'];
+	}// get initial stream
+
+	private function getScrolledStream($paging) {
+
+		$stream = json_decode($paging);
+		$stream = $this->facebook->api($paging);
+
+		foreach( $stream['data'] as $key => &$post ) {
+
+			if( isset($post['object_id']) ) {
+				$new_photo = $this->facebook->api('/'.$post['object_id']);
+				if( isset($new_photo['images']) ) {
+					$post['picture'] = $new_photo['images'][1]['source'];
+				}
 			}
 			if( isset($post['from']) ) {
 
@@ -79,12 +125,7 @@ class FacebookController extends \BaseController {
 		} // foreach
 
 		return $stream;
-	}
-	public function register() {
 
-		echo "register";
-
-	}
-
+	}// get scrolled stream
 
 }
