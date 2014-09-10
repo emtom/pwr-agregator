@@ -1,5 +1,11 @@
 <?php
 
+use Facebook\FacebookSession;
+use \LaravelFacebookRedirectLoginHelper;
+use Facebook\FacebookRequest;
+use Facebook\GraphObject;
+use Facebook\FacebookRequestException;
+
 class FacebookController extends \BaseController {
 
 
@@ -76,21 +82,38 @@ class FacebookController extends \BaseController {
 
 		foreach( $stream['home']['data'] as $key => &$post ) {
 
+
 			if( isset($post['object_id']) ) {
-				$new_photo = $this->facebook->api('/'.$post['object_id']);
-				if( isset($new_photo['images']) ) {
-					$post['picture'] = $new_photo['images'][1]['source'];
-				}
+
+				try {
+					$new_media = $this->facebook->api('/'.$post['object_id']);
+					if( isset($new_media['images']) ) {
+						$post['picture'] = $new_media['images'][1]['source'];
+					} else if( isset( $new_media['format'])) {
+						$post['video']['iframe'] = $new_media['format'][1]['embed_html'];
+						$post['video']['picture'] = $new_media['format'][1]['picture'];
+					}
+				} catch (FacebookApiException $e) {}
+
 			}
 			if( isset($post['from']) ) {
 
-				$fb_user = $this->facebook->api('/'.$post['from']['id']);
-				$post['from']['link_to'] = $fb_user['link'];
+				try {
+					$fb_user = $this->facebook->api('/'.$post['from']['id']);
+					if( isset( $fb_user['link'])) {
+						$post['from']['link_to'] = $fb_user['link'];
+					}
+				} catch (FacebookApiException $e) {}
 
 			}
 			if( isset($post['to']) ) {
-				$fb_target_user = $this->facebook->api('/'.$post['to']['data'][0]['id']);
-				$post['to']['data'][0]['link_to'] = $fb_target_user['link'];
+
+				try {
+					$fb_target_user = $this->facebook->api('/'.$post['to']['data'][0]['id']);
+					if( isset( $fb_target_user['link'])) {
+						$post['to']['data'][0]['link_to'] = $fb_target_user['link'];
+					}
+				} catch (FacebookApiException $e) {}
 			}
 
 		} // foreach
@@ -106,20 +129,36 @@ class FacebookController extends \BaseController {
 		foreach( $stream['data'] as $key => &$post ) {
 
 			if( isset($post['object_id']) ) {
-				$new_photo = $this->facebook->api('/'.$post['object_id']);
-				if( isset($new_photo['images']) ) {
-					$post['picture'] = $new_photo['images'][1]['source'];
-				}
+
+				try {
+					$new_media = $this->facebook->api('/'.$post['object_id']);
+					if( isset($new_media['images']) ) {
+						$post['picture'] = $new_media['images'][1]['source'];
+					} else if( isset( $new_media['format'])) {
+						$post['video']['iframe'] = $new_media['format'][1]['embed_html'];
+						$post['video']['picture'] = $new_media['format'][1]['picture'];
+					}
+				} catch (FacebookApiException $e) {}
+
 			}
 			if( isset($post['from']) ) {
 
-				$fb_user = $this->facebook->api('/'.$post['from']['id']);
-				$post['from']['link_to'] = $fb_user['link'];
+				try {
+					$fb_user = $this->facebook->api('/'.$post['from']['id']);
+					if( isset( $fb_user['link'])) {
+						$post['from']['link_to'] = $fb_user['link'];
+					}
+				} catch (FacebookApiException $e) {}
 
 			}
 			if( isset($post['to']) ) {
-				$fb_target_user = $this->facebook->api('/'.$post['to']['data'][0]['id']);
-				$post['to']['data'][0]['link_to'] = $fb_target_user['link'];
+
+				try {
+					$fb_target_user = $this->facebook->api('/'.$post['to']['data'][0]['id']);
+					if( isset( $fb_target_user['link'])) {
+						$post['to']['data'][0]['link_to'] = $fb_target_user['link'];
+					}
+				} catch (FacebookApiException $e) {}
 			}
 
 		} // foreach

@@ -5,9 +5,10 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"facebook/php-sdk": "dev-master",
+		"facebook/php-sdk": "*",
 		"php-instagram-api/php-instagram-api": "dev-master",
-		"elevencodes/instagram-laravel": "2.0.*@dev"
+		"elevencodes/instagram-laravel": "2.0.*@dev",
+		"facebook/php-sdk-v4": "4.0.*"
 	},
 	"autoload": {
 		"classmap": [

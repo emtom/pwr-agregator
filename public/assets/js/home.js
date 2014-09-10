@@ -59,8 +59,10 @@
 
 					loading = false;
 					paging.prev = response.paging.previous;
+					paging.next = response.paging.next;
 
 					console.log( paging.prev );
+					console.log( paging.next );
 
 				});
 			} else {
@@ -72,7 +74,7 @@
 					url: ajaxLink,
 					data: {
 						'getType': 'scrolled',
-						'paging': paging.prev.substring(31)
+						'paging': paging.next.substring(31)
 					}
 				}).done(function(response) {
 
@@ -92,8 +94,10 @@
 
 						loading = false;
 						paging.prev = response.paging.previous;
+						paging.next = response.paging.next;
 
 						console.log( paging.prev );
+						console.log( paging.next );
 
 					} else {
 						loading = false;
