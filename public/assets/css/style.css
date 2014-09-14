@@ -91,7 +91,8 @@
       clear: both; }
     .stream .post .link-container img {
       float: left;
-      margin: 0 15px 0px 0; }
+      margin: 0 15px 0px 0;
+      max-width: 100%; }
     .stream .post .link-container h3 {
       font-size: 14px;
       line-height: 20px;

@@ -121,7 +121,9 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-		'Elevencodes\InstagramLaravel\InstagramLaravelServiceProvider'
+		'Elevencodes\InstagramLaravel\InstagramLaravelServiceProvider',
+		'Way\Generators\GeneratorsServiceProvider',
+		'Thujohn\Twitter\TwitterServiceProvider',
 
 	),
 
@@ -189,7 +191,8 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
-		'Instagram'       => 'Elevencodes\InstagramLaravel\Facades\InstagramLaravel'
+		'Instagram'       => 'Elevencodes\InstagramLaravel\Facades\InstagramLaravel',
+		'Twitter'         => 'Thujohn\Twitter\TwitterFacade',
 	),
 
 );

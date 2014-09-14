@@ -49,6 +49,7 @@
 
 		{{ HTML::script('./assets/js/jquery-1.9.1.js') }}
 		{{ HTML::script('./assets/js/handlebars-v1.3.0.js')}}
+        {{ HTML::script('./assets/js/imagesloaded.min.js') }}
 		{{ HTML::script('./assets/js/masonry.pkgd.min.js')}}
 		{{ HTML::script('./assets/js/scripts.js') }}
 

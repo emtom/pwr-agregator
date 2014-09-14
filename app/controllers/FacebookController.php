@@ -66,10 +66,14 @@ class FacebookController extends \BaseController {
 			case 'scrolled':
 				$stream = $this->getScrolledStream($paging);
 				break;
+			case 'test':
+				$stream = $this->testStream();
+				break;
 		} // switch
 
 		return $stream;
 	}
+
 	public function register() {
 
 		echo "register";

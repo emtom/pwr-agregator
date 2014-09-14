@@ -4,6 +4,7 @@
 	var stream = $('<div class="stream" id="home-stream"></div>');
 	var loading = false;
 	var paging = {};
+	var msnry;
 
 	main.append('<div class="loader-gif"></div>');
 
@@ -53,9 +54,12 @@
 
 					main.append(stream);
 
-					var msnry = new Masonry( '#home-stream', {
-						itemSelector: '.post-container'
+					$('#home-stream').imagesLoaded(function(){
+						msnry = new Masonry( '#home-stream', {
+							itemSelector: '.post-container'
+						});
 					});
+
 
 					loading = false;
 					paging.prev = response.paging.previous;
@@ -88,8 +92,10 @@
 							stream.append(htmlElem);
 						});
 
-						var msnry = new Masonry( '#home-stream', {
-							itemSelector: '.post-container'
+						$('#home-stream').imagesLoaded(function(){
+							msnry = new Masonry( '#home-stream', {
+								itemSelector: '.post-container'
+							});
 						});
 
 						loading = false;

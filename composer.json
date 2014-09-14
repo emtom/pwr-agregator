@@ -8,7 +8,8 @@
 		"facebook/php-sdk": "*",
 		"php-instagram-api/php-instagram-api": "dev-master",
 		"elevencodes/instagram-laravel": "2.0.*@dev",
-		"facebook/php-sdk-v4": "4.0.*"
+		"facebook/php-sdk-v4": "4.0.*",
+		"thujohn/twitter": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
@@ -36,5 +37,8 @@
 	"config": {
 		"preferred-install": "dist"
 	},
-	"minimum-stability": "stable"
+	"minimum-stability": "stable",
+	"require-dev": {
+		"way/generators": "2.*"
+	}
 }

@@ -24,6 +24,25 @@ Route::get('/stream', 'StreamController@getStream');
 Route::get('login/fb/callback', 'FacebookController@loginCallback');
 
 
+Route::get('/twitterstream2', function() {
+
+
+	// echo "<pre>";
+	// //print_r( Twitter::getHomeTimeline(array('count' => 20, 'format' => 'json')) );
+	// $rAr = json_decode( Twitter::getHomeTimeline(array('count' => 20, 'format' => 'json')) );
+
+	// print_r( $rAr );
+
+
+	// // $new = json_decode( Twitter::getHomeTimeline(array('count' => 20, 'max_id' => $last_id, 'format' => 'json')) );
+
+	// // $r = array_merge($rAr, $new);
+
+	// // echo count($r);
+
+});
+
+
 // /* instagram helper */
 // Route::get('/users/authorize', array('as' => 'authorize', 'uses' => 'UsersController@getAuthorize'));
 // Route::get('/login', array('as' => 'login', 'uses' => 'UsersController@getLogin'));
