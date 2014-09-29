@@ -27,18 +27,19 @@ Route::get('login/fb/callback', 'FacebookController@loginCallback');
 Route::get('/twitterstream2', function() {
 
 
-	// echo "<pre>";
-	// //print_r( Twitter::getHomeTimeline(array('count' => 20, 'format' => 'json')) );
-	// $rAr = json_decode( Twitter::getHomeTimeline(array('count' => 20, 'format' => 'json')) );
+	echo "<pre>";
+	//print_r( Twitter::getHomeTimeline(array('count' => 20, 'format' => 'json')) );
+	//$rAr = json_decode( Twitter::getHomeTimeline(array('count' => 20, 'format' => 'json')) );
+	$rAr = json_decode( Twitter::getFriends( array('format' => 'json') ));
 
-	// print_r( $rAr );
+	print_r( $rAr );
 
 
-	// // $new = json_decode( Twitter::getHomeTimeline(array('count' => 20, 'max_id' => $last_id, 'format' => 'json')) );
+	// $new = json_decode( Twitter::getHomeTimeline(array('count' => 20, 'max_id' => $last_id, 'format' => 'json')) );
 
-	// // $r = array_merge($rAr, $new);
+	// $r = array_merge($rAr, $new);
 
-	// // echo count($r);
+	// echo count($r);
 
 });
 

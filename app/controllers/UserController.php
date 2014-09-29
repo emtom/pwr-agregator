@@ -6,7 +6,14 @@ class UserController extends \BaseController {
 
 		if(Auth::check()) {
 			$user = Auth::user();
-			return View::make('user.profile')->with('user', $user);
+
+			$fbFriendList = App::make('FacebookController')->getFriendList();
+			$twitterFriendList = App::make('TwitterController')->getFriendList();
+
+			return View::make('user.profile')
+				->with('user', $user)
+				->with('fbFriends', $fbFriendList)
+				->with('twitterFriends', $twitterFriendList);
 
 		}
 

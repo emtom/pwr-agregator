@@ -21,6 +21,7 @@
         <![endif]-->
 
     	{{ HTML::style('assets/css/reset.css') }}
+        {{ HTML::style('assets/css/tabulus.css') }}
         {{ HTML::style('assets/css/font-awesome.min.css') }}
         {{ HTML::style('assets/css/style.css') }}
 
@@ -51,6 +52,7 @@
 		{{ HTML::script('./assets/js/handlebars-v1.3.0.js')}}
         {{ HTML::script('./assets/js/imagesloaded.min.js') }}
 		{{ HTML::script('./assets/js/masonry.pkgd.min.js')}}
+        {{ HTML::script('./assets/js/tabulus.min.js') }}
 		{{ HTML::script('./assets/js/scripts.js') }}
 
 		@yield ('scripts')

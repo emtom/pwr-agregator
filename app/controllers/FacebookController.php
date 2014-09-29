@@ -74,6 +74,17 @@ class FacebookController extends \BaseController {
 		return $stream;
 	}
 
+	public function getFriendList() {
+
+		$friendList = $this->facebook->api('/me?fields=friends');
+		$friendList = $friendList['friends']['data'];
+		foreach($friendList as $key => &$friend) {
+			$friend['type'] = 'fb';
+		}
+
+		return $friendList;
+	}
+
 	public function register() {
 
 		echo "register";

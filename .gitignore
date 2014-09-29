@@ -1,6 +1,8 @@
 /bootstrap/compiled.php
 /public/assets/.sass-cache
 /vendor
+/app/config/facebook.php
+/app/config/packages/thujohn/twitter/config.php
 composer.phar
 composer.lock
 .env.*.php
