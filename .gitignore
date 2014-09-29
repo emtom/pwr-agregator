@@ -3,6 +3,8 @@
 /vendor
 /app/config/facebook.php
 /app/config/packages/thujohn/twitter/config.php
+twitterdata.txt
+twitterFriends.txt
 composer.phar
 composer.lock
 .env.*.php
