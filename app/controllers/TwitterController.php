@@ -22,8 +22,9 @@ class TwitterController extends \BaseController {
 		//$stream = json_decode(Twitter::getHomeTimeline(array('count' => 20, 'format' => 'json')), true);
 		$stream = json_decode( file_get_contents('http://maffish.linuxpl.info/agregator/twitterdata.json'), true);
 
-		//$obj = new stdClass();
-
+		foreach( $stream as $key => &$item ) {
+			$item['item_type'] = 'tw';
+		}
 
 		return $stream;
 	}

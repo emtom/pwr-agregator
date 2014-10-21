@@ -66,6 +66,9 @@
 			<div class="footer">
 
 				<div class="footer__left">
+
+					<span class="fb-icon"><i class="fa fa-facebook-square"></i></span>
+
 					{{ type }}
 
 					{{#if likes}}
@@ -83,31 +86,34 @@
 
 <script id="instagram-tpl" type="text/x-handlebars-template">
 
-	<article class="post insta-post">
-
-		<div class="content">
-
-		</div>
-		<div class="footer">
-			<small>-author</small>
-		</div>
-
-	</article>
 
 </script>
 
-<script id="twitter-tpl" type="text/x-handlebars-template">
+<script id="tw-tpl" type="text/x-handlebars-template">
 
-	<article class="post tw-post">
 
-		<div class="content">
+	<div class="post-container">
+		<article class="post tw-post">
 
-		</div>
-		<div class="footer">
-			<small>-author</small>
-		</footer>
+			<div class="content">
+				<p>{{ text }}</p>
+			</div>
+			<div class="footer">
+				<div class="footer__left">
 
-	</article>
+					<span class="tw-icon"><i class="fa fa-twitter-square"></i></span>
+
+					{{ type }}
+
+					<i class="fa fa-heart"></i> {{ favorite_count }}
+				</div>
+				<div class="footer__right">
+					<small>- {{ user.screen_name }}</small>
+				</div>
+			</div>
+
+		</article>
+	</div>
 
 </script>
 

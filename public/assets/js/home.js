@@ -11,7 +11,9 @@ var xhr;
 	main.append('<div class="loader-gif"></div>');
 
 	var fbTplSource = $("#fb-tpl").html();
+	var twTplSource = $('#tw-tpl').html();
 	var fbTplTemplate = Handlebars.compile(fbTplSource);
+	var twTplTemplate = Handlebars.compile(twTplSource);
 	var htmlElem;
 	var html;
 
@@ -50,7 +52,11 @@ var xhr;
 					console.log(response);
 
 					$.each(response.data, function(i, e){
-						htmlElem = fbTplTemplate(e);
+						console.log(e);
+						if(e.item_type == 'fb')
+							htmlElem = fbTplTemplate(e);
+						if(e.item_type == 'tw')
+							htmlElem = twTplTemplate(e);
 						stream.append(htmlElem);
 					});
 
@@ -64,8 +70,8 @@ var xhr;
 
 
 					loading = false;
-					paging.prev = response.paging.previous;
-					paging.next = response.paging.next;
+					paging.prev = response.paging.fb.previous;
+					paging.next = response.paging.fb.next;
 
 					console.log( paging.prev );
 					console.log( paging.next );
@@ -87,7 +93,11 @@ var xhr;
 						main.find('.loader-gif').remove();
 
 						$.each(response.data, function(i, e){
-							htmlElem = fbTplTemplate(e);
+							console.log(e);
+							if(e.item_type == 'fb')
+								htmlElem = fbTplTemplate(e);
+							if(e.item_type == 'tw')
+								htmlElem = twTplTemplate(e);
 							stream.append(htmlElem);
 						});
 
@@ -98,8 +108,8 @@ var xhr;
 						});
 
 						loading = false;
-						paging.prev = response.paging.previous;
-						paging.next = response.paging.next;
+						paging.prev = response.paging.fb.previous;
+						paging.next = response.paging.fb.next;
 
 						console.log( paging.prev );
 						console.log( paging.next );

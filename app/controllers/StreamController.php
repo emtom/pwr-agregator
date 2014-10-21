@@ -28,11 +28,23 @@ class StreamController extends BaseController {
 		$twstream = App::make('TwitterController')->getStream();
 
 
-		$stream = array_merge($fbstream, $twstream);
+
+		//$stream = array_merge($fbstream, $twstream);
 		//$stream = $twstream;
-		echo "<pre>";
-		dd($stream);
-		//return $stream;
+		$stream['data'] = [];
+		$stream['paging']['fb'] = $fbstream['paging'];
+		//echo "<pre>";
+
+		foreach( $fbstream['data'] as $fbitem) {
+			array_push($stream['data'], $fbitem);
+		}
+		foreach( $twstream as $twitem) {
+			array_push($stream['data'], $twitem);
+		}
+
+		shuffle($stream['data']);
+
+		return $stream;
 	}
 
 }

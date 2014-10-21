@@ -97,6 +97,7 @@ class FacebookController extends \BaseController {
 
 		foreach( $stream['home']['data'] as $key => &$post ) {
 
+			$post['item_type'] = 'fb';
 
 			if( isset($post['object_id']) ) {
 
@@ -142,6 +143,8 @@ class FacebookController extends \BaseController {
 		$stream = $this->facebook->api($paging);
 
 		foreach( $stream['data'] as $key => &$post ) {
+
+			$post['item_type'] = 'fb';
 
 			if( isset($post['object_id']) ) {
 
