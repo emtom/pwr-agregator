@@ -20,12 +20,19 @@ class StreamController extends BaseController {
 		$getType = Input::get('getType');
 		$paging = Input::get('paging');
 
-		$stream = App::make('FacebookController')->getStream($getType, $paging);
+		if($getType == NULL) {
+			$getType = 'initial';
+		}
+
+		$fbstream = App::make('FacebookController')->getStream($getType, $paging);
+		$twstream = App::make('TwitterController')->getStream();
 
 
-		//print_r($stream);
-
-		return $stream;
+		$stream = array_merge($fbstream, $twstream);
+		//$stream = $twstream;
+		echo "<pre>";
+		dd($stream);
+		//return $stream;
 	}
 
 }

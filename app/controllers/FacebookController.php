@@ -19,7 +19,7 @@ class FacebookController extends \BaseController {
 
 	    $params = array(
 	        'redirect_uri' => url('/login/fb/callback'),
-	        'scope' => 'email',
+	        'scope' => 'email, user_friends, user_activities, read_stream'
 	    );
 	    return Redirect::away($this->facebook->getLoginUrl($params));
 
@@ -57,7 +57,7 @@ class FacebookController extends \BaseController {
 
 	}
 
-	public function getStream($getType, $paging = null) {
+	public function getStream($getType = 'initial', $paging = null) {
 
 		switch($getType) {
 			case 'initial':
@@ -93,7 +93,7 @@ class FacebookController extends \BaseController {
 
 	private function getInitialStream() {
 
-		$stream = $this->facebook->api('/me?fields=home');
+		$stream = $this->facebook->api('/v1.0/me?fields=home');
 
 		foreach( $stream['home']['data'] as $key => &$post ) {
 

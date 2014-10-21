@@ -1,3 +1,5 @@
+var xhr;
+
 (function($){
 
 	var main = $('main');
@@ -37,7 +39,7 @@
 
 			if(type == 'initial') {
 
-				$.ajax({
+				xhr = $.ajax({
 					url: ajaxLink,
 					data: {
 						'getType': 'initial'
@@ -72,17 +74,14 @@
 			} else {
 
 				main.append('<div class="loader-gif"></div>');
-				$("html, body").animate({ scrollTop: $(document).height() }, 1500);
 
-				$.ajax({
+				xhr = $.ajax({
 					url: ajaxLink,
 					data: {
 						'getType': 'scrolled',
 						'paging': paging.next.substring(31)
 					}
 				}).done(function(response) {
-
-					console.log(response);
 
 					if(response.data.length) {
 						main.find('.loader-gif').remove();
@@ -119,6 +118,8 @@
 	} // getStream
 
 
+
+
 	Handlebars.registerHelper('compare', function(lvalue, rvalue, options) {
 
 		if (arguments.length < 3)
@@ -153,3 +154,11 @@
 
 
 })($);
+
+$(document).ready(function(){
+	$('.main-nav a').on('click', function(){
+		if(typeof xhr.abort == 'function') {
+			xhr.abort();
+		}
+	});
+});
