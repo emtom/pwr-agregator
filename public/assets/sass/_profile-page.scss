@@ -94,6 +94,19 @@
 .connections {
 	@include cf;
 	margin: 15px 0 0;
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			display: block;
+			@include cf;
+			padding: 5px 0;
+			margin: 0 0 10px;
+		}
+	}
 }
 
 .connection__logo {

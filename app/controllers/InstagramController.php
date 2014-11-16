@@ -14,17 +14,25 @@ class InstagramController extends \BaseController {
 
 		Session::put(Config::get('instagram::session_name'), Instagram::getAccessToken(Input::get('code')));
 
-        return Redirect::to('/');
+        return Redirect::to('profile');
     }
 
     public function disconnect() {
 
         Session::forget(Config::get('instagram::session_name'));
 
-        return Redirect::to('/');
+        return Redirect::to('profile');
     }
 
 	public function getInitialStream() {}
+
+    public function getFriendList() {
+
+        $currentUser = Instagram::getCurrentUser();
+        $friendList = $currentUser->getFollowers();
+
+        return $friendList;
+    }
 
 
 }

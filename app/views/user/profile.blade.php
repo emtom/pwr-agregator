@@ -60,6 +60,23 @@
 								</div>
 
 							</li>
+
+							<li class="connection">
+
+								<div class="connection__logo">
+									<div class="container instagram">
+										<i class="fa fa-instagram"></i>
+									</div>
+								</div>
+								<div class="connection__text">
+									<h4>Instagram</h4>
+									<p class="status">nie połączono</p>
+								</div>
+								<div class="connection__action">
+									<a href="{{ url('instagram/connect') }}">połącz</a>
+								</div>
+
+							</li>
 						</ul>
 
 					</fieldset>
