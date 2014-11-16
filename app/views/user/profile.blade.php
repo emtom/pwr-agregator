@@ -39,6 +39,32 @@
 
 			<div class="box">
 				<h3>Połączenia</h3>
+
+				<form action="#" class="connections">
+					<fieldset>
+
+						<ul>
+							<li class="connection">
+
+								<div class="connection__logo">
+									<div class="container tw">
+										<i class="fa fa-twitter"></i>
+									</div>
+								</div>
+								<div class="connection__text">
+									<h4>Twitter</h4>
+									<p class="status">nie połączono</p>
+								</div>
+								<div class="connection__action">
+									<a href="{{ url('twitter/connect') }}">połącz</a>
+								</div>
+
+							</li>
+						</ul>
+
+					</fieldset>
+				</form>
+
 			</div>
 
 			<div class="box">

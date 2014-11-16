@@ -9,6 +9,13 @@
 		margin: 15px 0 0;
 		padding: 15px;
 		background: #FFF;
+
+		h3 {
+			font-size: 26px;
+			line-height: 32px;
+			font-weight: 300;
+			@include cf;
+		}
 	}
 
 	table {
@@ -78,10 +85,56 @@
 		}
 	}
 
-	.info {
-		margin: 40px 0 20px;
-		text-align: center;
-	}
-
 } // profile page
 
+.user-friends {
+	margin: 15px 0 0;
+}
+
+.connections {
+	@include cf;
+	margin: 15px 0 0;
+}
+
+.connection__logo {
+	float: left;
+
+	.container {
+		@include border-radius(50%);
+		width: 50px;
+		height: 50px;
+		text-align: center;
+		font-size: 30px;
+		line-height: 50px;
+
+		&.tw {
+			background: #55ACEE;
+			color: #fff;
+		}
+
+		&.fb {
+			background: #3b5998;
+		}
+	}
+}
+
+.connection__text {
+	float: left;
+	margin: 0 0 0 15px;
+
+	h4 {
+		font-size: 16px;
+		line-height: 20px;
+		font-weight: 600;
+		margin: 5px 0 0;
+	}
+
+	.status {
+		margin: 0;
+		font-size: 14px;
+		line-height: 20px;
+		font-weight: 300;
+	}
+}
+
+.connection__action {}

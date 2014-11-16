@@ -42,6 +42,8 @@ class FacebookController extends \BaseController {
 
 	        $profile = new Profile();
 	        $profile->uid = $uid;
+	        $profile->type_id = 1;
+	        $profile->state = 1;
 	        $profile->username = $me['username'];
 	        $profile = $user->profiles()->save($profile);
 	    }

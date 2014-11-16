@@ -7,5 +7,9 @@ class Profile extends Eloquent {
     {
         return $this->belongsTo('User');
     }
+
+    public function profileType() {
+    	return $this->hasOne('Profile_type', 'type_id');
+    }
 }
 

@@ -6,15 +6,18 @@ class UserController extends \BaseController {
 
 		if(Auth::check()) {
 			$user = Auth::user();
-
+			$profiles = $user->profiles();
 			$fbFriendList = App::make('FacebookController')->getFriendList();
 			$twitterFriendList = App::make('TwitterController')->getFriendList();
 
 			return View::make('user.profile')
 				->with('user', $user)
 				->with('fbFriends', $fbFriendList)
-				->with('twitterFriends', $twitterFriendList);
+				->with('twitterFriends', $twitterFriendList)
+				->with('profiles', $profiles);
 
+		} else {
+			return Redirect::to('/');
 		}
 
 	}
@@ -30,24 +33,5 @@ class UserController extends \BaseController {
 
 
 	}
-
-	public function getLogin() {
-        if (Session::has(Config::get('instagram::session_name')))
-            Session::forget(Config::get('instagram::session_name'));
-
-        Instagram::authorize();
-    }
-
-    public function getAuthorize() {
-        Session::put(Config::get('instagram::session_name'), Instagram::getAccessToken(Input::get('code')));
-
-        return Redirect::to('/');
-    }
-
-    public function getLogout() {
-        Session::forget(Config::get('instagram::session_name'));
-
-        return Redirect::to('/');
-    }
 
 }
