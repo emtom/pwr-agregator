@@ -24,6 +24,10 @@ Route::get('/stream', 'StreamController@getStream');
 
 Route::get('login/fb/callback', 'FacebookController@loginCallback');
 
+Route::get('instagram/connect', 'InstagramController@connect');
+Route::get('instagram/authorize', 'InstagramController@authorize');
+Route::get('instagram/disconnect', 'InstagramController@disconnect');
+
 
 Route::get('/twitterstream2', function() {
 
@@ -58,7 +62,8 @@ Route::get('/twitter/connect', function()
     // your SIGN IN WITH TWITTER  button should point to this route
     $sign_in_twitter = TRUE;
     $force_login = FALSE;
-    $callback_url = 'http://127.0.0.1/agregator/public/twitter/callback';
+    $callback_url = 'http://' . $_SERVER['HTTP_HOST'] . '/twitter/callback';
+    //$callback_url = 'http://127.0.0.1/agregator/public/twitter/callback';
     // Make sure we make this request w/o tokens, overwrite the default values in case of login.
     Twitter::set_new_config(array('token' => '', 'secret' => ''));
     $token = Twitter::getRequestToken($callback_url);
@@ -116,6 +121,10 @@ Route::get('/twitter/callback', function() {
 });
 
 Route::get('twitter/error', function(){
-    // Something went wrong, add your own error handling here
+    echo "Something went wrong, add your own error handling here";
 });
 
+
+Route::get('flush', function(){
+	Session::flush();
+});

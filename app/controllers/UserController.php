@@ -7,6 +7,7 @@ class UserController extends \BaseController {
 		if(Auth::check()) {
 			$user = Auth::user();
 			$profiles = $user->profiles();
+
 			$fbFriendList = App::make('FacebookController')->getFriendList();
 			$twitterFriendList = App::make('TwitterController')->getFriendList();
 
@@ -33,5 +34,7 @@ class UserController extends \BaseController {
 
 
 	}
+
+
 
 }
