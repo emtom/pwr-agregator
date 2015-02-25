@@ -66,16 +66,11 @@
 			<div class="footer">
 
 				<div class="footer__left">
-
-					<span class="fb-icon"><i class="fa fa-facebook-square"></i></span>
-
-					{{ type }}
-
 					{{#if likes}}
-						<i class="fa fa-heart"></i> {{ likes.data.length }} {{#if likes.paging.next }}+{{/if}}
+						<i class="fa fa-heart"></i> {{ likes.data.length }}{{#if likes.paging.next }}+{{/if}}
 					{{/if}}
 				</div>
-				<div class="footer__right">- <a href="{{ from.link_to }}" target="_blank">{{ from.name }}</a></div>
+				<div class="footer__right">- <a href="{{ from.link_to }}" target="_blank">{{ from.name }}</a> <span class="fb-icon"><i class="fa fa-facebook-square"></i></span></div>
 
 			</div>
 
@@ -84,8 +79,30 @@
 
 </script>
 
-<script id="instagram-tpl" type="text/x-handlebars-template">
+<script id="insta-tpl" type="text/x-handlebars-template">
 
+	<div class="post-container">
+		<article class="post insta-post">
+
+			{{#if caption}}
+			<div class="content">
+				<p> {{ caption }}</p>
+			</div>
+			{{/if}}
+			<div class="img-container">
+				<img src='{{ img_url.url }}' alt="{{ username }} picture">
+			</div>
+			<div class="footer">
+				<div class="footer__left">
+					<i class="fa fa-heart"></i> {{ like_count }}
+				</div>
+				<div class="footer__right">
+					<small>- <a href="http://instagram.com/{{ username }}" target="_blank">{{ username }}</a> <span class="insta-icon"><i class="fa fa-instagram"></i></span></small>
+				</div>
+			</div>
+
+		</article>
+	</div>
 
 </script>
 
@@ -100,15 +117,10 @@
 			</div>
 			<div class="footer">
 				<div class="footer__left">
-
-					<span class="tw-icon"><i class="fa fa-twitter-square"></i></span>
-
-					{{ type }}
-
 					<i class="fa fa-heart"></i> {{ favorite_count }}
 				</div>
 				<div class="footer__right">
-					<small>- {{ user.screen_name }}</small>
+					<small>- <a href="https://twitter.com/{{ user.screen_name }}" target="_blank">{{ user.screen_name }}</a> <span class="tw-icon"><i class="fa fa-twitter-square"></i></span></small>
 				</div>
 			</div>
 

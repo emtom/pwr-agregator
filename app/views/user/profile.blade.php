@@ -35,7 +35,7 @@
 	<div class="main-container sub-page">
 		<div id="profile-page">
 
-			<h1 class="page-heading"><span class="pull-left">{{ $user['name'] }}</span> <span class="pull-right">Profil użytkownika</span></h1>
+			<h1 class="page-heading"><span class="pull-left profile-name">{{ $user['name'] }}</span> <span class="pull-right profile-heading">Profil użytkownika</span></h1>
 
 			<div class="box">
 				<h3>Połączenia</h3>
@@ -84,6 +84,9 @@
 
 			</div>
 
+
+
+			<!--
 			<div class="box">
 
 				<h3>
@@ -137,6 +140,8 @@
 				</table>
 
 			</div>
+
+			-->
 
 		</div>
 	</div>

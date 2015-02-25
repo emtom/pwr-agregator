@@ -10,19 +10,13 @@ class UserController extends \BaseController {
 
 			$fbFriendList = App::make('FacebookController')->getFriendList();
 			$twitterFriendList = App::make('TwitterController')->getFriendList();
-			$instagramFriendList = App::make('InstagramController')->getFriendList();
-
-			echo "<pre>";
-			print_r( Session::all() );
-			echo "</pre>";
-
-			dd($instagramFriendList);
+			//$instagramFriendList = App::make('InstagramController')->getFriendList();
 
 			return View::make('user.profile')
 				->with('user', $user)
 				->with('fbFriends', $fbFriendList)
 				->with('twitterFriends', $twitterFriendList)
-				->with('instagramFriends', $instagramFriendList)
+				//->with('instagramFriends', $instagramFriendList)
 				->with('profiles', $profiles);
 
 		} else {

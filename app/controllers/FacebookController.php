@@ -28,6 +28,10 @@ class FacebookController extends \BaseController {
 	public function loginCallback() {
 
 		$uid = $this->facebook->getUser();
+
+		if($uid == 0)
+			return Redirect::to('/')->with('message', 'There was an error');
+
 		$me = $this->facebook->api('/me');
 
 	    $profile = Profile::whereUid($uid)->first();

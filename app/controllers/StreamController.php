@@ -26,20 +26,21 @@ class StreamController extends BaseController {
 
 		$fbstream = App::make('FacebookController')->getStream($getType, $paging);
 		$twstream = App::make('TwitterController')->getStream();
+		$instastream = App::make('InstagramController')->getStream();
 
+		//dd($instagramstream);
 
-
-		//$stream = array_merge($fbstream, $twstream);
-		//$stream = $twstream;
 		$stream['data'] = [];
 		$stream['paging']['fb'] = $fbstream['paging'];
-		//echo "<pre>";
 
 		foreach( $fbstream['data'] as $fbitem) {
 			array_push($stream['data'], $fbitem);
 		}
 		foreach( $twstream as $twitem) {
 			array_push($stream['data'], $twitem);
+		}
+		foreach( $instastream as $instaitem) {
+			array_push($stream['data'], $instaitem);
 		}
 
 		shuffle($stream['data']);

@@ -24,6 +24,7 @@ Route::get('/stream', 'StreamController@getStream');
 
 Route::get('login/fb/callback', 'FacebookController@loginCallback');
 
+Route::get('instagram/getstream', 'InstagramController@getStream');
 Route::get('instagram/connect', 'InstagramController@connect');
 Route::get('instagram/authorize', 'InstagramController@authorize');
 Route::get('instagram/disconnect', 'InstagramController@disconnect');

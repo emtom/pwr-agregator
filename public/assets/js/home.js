@@ -12,8 +12,12 @@ var xhr;
 
 	var fbTplSource = $("#fb-tpl").html();
 	var twTplSource = $('#tw-tpl').html();
+	var instaTplSource = $('#insta-tpl').html();
+
 	var fbTplTemplate = Handlebars.compile(fbTplSource);
 	var twTplTemplate = Handlebars.compile(twTplSource);
+	var instaTplTemplate = Handlebars.compile(instaTplSource);
+
 	var htmlElem;
 	var html;
 
@@ -53,10 +57,14 @@ var xhr;
 
 					$.each(response.data, function(i, e){
 						console.log(e);
+
 						if(e.item_type == 'fb')
 							htmlElem = fbTplTemplate(e);
 						if(e.item_type == 'tw')
 							htmlElem = twTplTemplate(e);
+						if(e.item_type == 'insta')
+							htmlElem = instaTplTemplate(e);
+
 						stream.append(htmlElem);
 					});
 
@@ -98,6 +106,8 @@ var xhr;
 								htmlElem = fbTplTemplate(e);
 							if(e.item_type == 'tw')
 								htmlElem = twTplTemplate(e);
+							if(e.item_type == 'insta')
+								htmlElem = instaTplTemplate(e);
 							stream.append(htmlElem);
 						});
 
@@ -108,11 +118,10 @@ var xhr;
 						});
 
 						loading = false;
-						paging.prev = response.paging.fb.previous;
-						paging.next = response.paging.fb.next;
-
-						console.log( paging.prev );
-						console.log( paging.next );
+						if(response.paging.fb) {
+							paging.prev = response.paging.fb.previous;
+							paging.next = response.paging.fb.next;
+						}
 
 					} else {
 						loading = false;

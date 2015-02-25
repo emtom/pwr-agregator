@@ -24,6 +24,10 @@
     .stream .post-container {
       width: 50%;
       padding: 0 2%; } }
+  @media all and (max-width: 767px) {
+    .stream .post-container {
+      width: 100%;
+      padding: 0; } }
 .stream .post {
   background: #FFF;
   overflow: hidden;
@@ -54,6 +58,9 @@
       height: auto; }
     .stream .post .img-container.full {
       height: auto; }
+    @media all and (max-width: 767px) {
+      .stream .post .img-container {
+        max-height: 9999px; } }
   .stream .post .footer {
     background: #F9F9F9;
     padding: 15px;
@@ -101,10 +108,13 @@
       line-height: 18px; }
   .stream .post .fb-icon {
     color: #3b5998;
-    font-size: 16px; }
+    font-size: 14px; }
+  .stream .post .insta-icon {
+    color: #6E453C;
+    font-size: 14px; }
   .stream .post .tw-icon {
     color: #55ACEE;
-    font-size: 16px; }
+    font-size: 14px; }
 
 /*
 	aside specific styles
@@ -127,11 +137,18 @@ aside {
     display: table; }
   aside:after {
     clear: both; }
+  @media all and (max-width: 767px) {
+    aside {
+      top: 0;
+      width: 100%;
+      height: 35px;
+      left: 0;
+      border-right: none; } }
 
 .aside__bar--right {
   float: right;
   width: 50px;
-  height: 100%;
+  height: 35px;
   border-left: 1px solid #ECEEEE; }
   .aside__bar--right a {
     display: block;
@@ -146,6 +163,21 @@ aside {
     transition: color 0.5s ease; }
     .aside__bar--right a:hover {
       color: #999; }
+  @media all and (max-width: 767px) {
+    .aside__bar--right {
+      float: none;
+      width: 100%;
+      border: none;
+      position: relative;
+      z-index: 1000;
+      background: #fff;
+      border-bottom: 1px solid #ECEEEE; }
+      .aside__bar--right a {
+        padding: 3px 15px; }
+        .aside__bar--right a.btn-home {
+          float: left; }
+        .aside__bar--right a.btn-aside {
+          float: right; } }
 
 .aside__bar--left {
   float: left;
@@ -171,6 +203,20 @@ aside {
     transition: color 0.5s ease; }
     .aside__bar--left a:hover {
       color: white; }
+  @media all and (max-width: 767px) {
+    .aside__bar--left {
+      position: absolute;
+      display: none;
+      height: auto;
+      top: 35px;
+      left: 0;
+      width: 100%;
+      border: none;
+      z-index: 999;
+      text-align: right;
+      padding: 11px 15px 0; }
+      .aside__bar--left a {
+        text-align: right; } }
 
 .aside-profile .img-container {
   width: 100px;
@@ -183,6 +229,9 @@ aside {
   .aside-profile .img-container img {
     min-width: 100%;
     height: 100%; }
+@media all and (max-width: 767px) {
+  .aside-profile {
+    display: none; } }
 
 /*!
  *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -1921,6 +1970,19 @@ aside {
     display: table; }
   .connections:after {
     clear: both; }
+  .connections ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    .connections ul li {
+      display: block;
+      padding: 5px 0;
+      margin: 0 0 10px; }
+      .connections ul li:before, .connections ul li:after {
+        content: " ";
+        display: table; }
+      .connections ul li:after {
+        clear: both; }
 
 .connection__logo {
   float: left; }
@@ -1941,7 +2003,7 @@ aside {
 
 .connection__text {
   float: left;
-  margin: 0 0 0 15px; }
+  margin: 0 0 0 30px; }
   .connection__text h4 {
     font-size: 16px;
     line-height: 20px;
@@ -1952,6 +2014,29 @@ aside {
     font-size: 14px;
     line-height: 20px;
     font-weight: 300; }
+
+.connection__action {
+  float: right;
+  text-align: right;
+  margin: 15px 30px 0 0; }
+  .connection__action a {
+    padding: 10px 25px;
+    background: #F5F6F8;
+    border: 1px solid #ECEEEE;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px; }
+    .connection__action a:hover {
+      background: #FAFAFA; }
+
+@media all and (max-width: 767px) {
+  .profile-name {
+    display: none; } }
+
+@media all and (max-width: 767px) {
+  .profile-heading {
+    float: left;
+    font-size: 24px; } }
 
 * {
   -moz-box-sizing: border-box;
@@ -1972,6 +2057,9 @@ body {
   height: 100%; }
   body.aside-shown aside {
     left: 0; }
+  @media all and (max-width: 767px) {
+    body.aside-shown .aside__bar--left {
+      display: block; } }
 
 h1, h2, h3, h4 {
   color: #353535;
@@ -1980,10 +2068,18 @@ h1, h2, h3, h4 {
 h1 {
   font-size: 32px;
   line-height: 40px; }
+  @media all and (max-width: 767px) {
+    h1 {
+      font-size: 26px;
+      line-height: 36px; } }
 
 h2 {
   font-size: 28px;
   line-height: 34px; }
+  @media all and (max-width: 767px) {
+    h2 {
+      font-size: 22px;
+      line-height: 32px; } }
 
 h3 {
   font-size: 24px;
@@ -2066,6 +2162,12 @@ header {
   transition: all 0.3s; }
   .main-container.sub-page {
     padding: 15px 15px 15px 65px; }
+    @media all and (max-width: 767px) {
+      .main-container.sub-page {
+        padding: 65px 15px 15px; } }
+  @media all and (max-width: 767px) {
+    .main-container {
+      padding: 50px 15px 15px; } }
 
 main {
   padding: 15px 15px 15px 15px;
@@ -2109,13 +2211,19 @@ main {
 
 .credentials-panel {
   width: 500px;
-  margin: 200px auto 0;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
   text-align: center; }
   .credentials-panel p {
     margin: 10px 0; }
-  @media all and (max-width: 768px) {
+  @media all and (max-width: 767px) {
     .credentials-panel {
-      width: 100%; } }
+      width: calc(100% - 30px); } }
 
 .credential-text-panel {
   width: 500px;
@@ -2123,7 +2231,7 @@ main {
   text-align: center; }
   .credential-text-panel p {
     margin: 0 0 10px; }
-  @media all and (max-width: 768px) {
+  @media all and (max-width: 767px) {
     .credential-text-panel {
       width: 100%; } }
 

@@ -16,6 +16,11 @@
 			width: 50%;
 			padding: 0 2%;
 		}
+
+		@include respond-to(767) {
+			width: 100%;
+			padding: 0;
+		}
 	}
 	.post {
 		background: $bgContentColor;
@@ -52,6 +57,10 @@
 			}
 			&.full {
 				height: auto;
+			}
+
+			@include respond-to(767) {
+				max-height: 9999px;
 			}
 		}
 
@@ -109,12 +118,17 @@
 
 		.fb-icon {
 			color: #3b5998;
-			font-size: 16px;
+			font-size: 14px;
+		}
+
+		.insta-icon {
+			color: #6E453C;
+			font-size: 14px;
 		}
 
 		.tw-icon {
 			color: #55ACEE;
-			font-size: 16px;
+			font-size: 14px;
 		}
 	} // post
 

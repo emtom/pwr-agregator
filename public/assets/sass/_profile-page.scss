@@ -133,7 +133,7 @@
 
 .connection__text {
 	float: left;
-	margin: 0 0 0 15px;
+	margin: 0 0 0 30px;
 
 	h4 {
 		font-size: 16px;
@@ -150,4 +150,32 @@
 	}
 }
 
-.connection__action {}
+.connection__action {
+	float: right;
+	text-align: right;
+	margin: 15px 30px 0 0;
+
+	a {
+		padding: 10px 25px;
+		background: #F5F6F8;
+		border: 1px solid #ECEEEE;
+		@include border-radius(4px);
+
+		&:hover {
+			background: #FAFAFA;
+		}
+	}
+}
+
+.profile-name {
+	@include respond-to(767) {
+		display: none;
+	}
+}
+
+.profile-heading {
+	@include respond-to(767) {
+		float: left;
+		font-size: 24px;
+	}
+}
